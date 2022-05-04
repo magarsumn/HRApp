@@ -14,10 +14,15 @@ namespace HRApp.Server.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IRepository<Department> _departmentRepository;
+        private readonly IRepository<Designation> _designationRepository;
 
-        public DepartmentController(IRepository<Department> departmentRepository)
+        public DepartmentController(
+            IRepository<Department> departmentRepository,
+            IRepository<Designation> designationRepository
+            )
         {
             _departmentRepository = departmentRepository;
+            _designationRepository = designationRepository;
         }
 
 
@@ -67,12 +72,20 @@ namespace HRApp.Server.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var data = await _departmentRepository.FirstOrDefaultAsync(id);
-            if (data == null)
+            var deg = await _designationRepository.FirstOrDefaultAsync(a => a.DepartmentId == id);
+            if(deg != null)
             {
-                return NotFound();
+                return Ok("DepartmentId Refrence Exists.");
             }
-            await _departmentRepository.DeleteAsync(id);
-            return Ok("Item Deleted");
+            else
+            {
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                await _departmentRepository.DeleteAsync(id);
+                return Ok("Item Deleted");
+            }
         }
     }
 }

@@ -30,14 +30,25 @@
             <MudItem xs="12" sm="6" >
                 <MudTextField Margin="Margin.Dense"style="height:41px" @bind-Value="employees.Address" For="@(() => employees.Address)" Label="Address" Variant="Variant.Outlined"></MudTextField>
             </MudItem>
-            <MudItem xs="6" sm="3">
+            @*<MudItem xs="6" sm="3">
                 <MudSelect Margin="Margin.Dense"  @bind-Value="employees.Gender" For="@(() => employees.Gender)" Label="Gender" Variant="Variant.Outlined">
                     @foreach(var item in Enum.GetValues(typeof(Sex)))
                     {
                         <MudSelectItem Value="@item">@item</MudSelectItem>
                     }
                 </MudSelect>
-            </MudItem>
+            </MudItem>*@
+            <div class="col-md-3">
+            <div class="form-group">
+                <label for="Sex"> Gender *</label>
+                <select @bind="@employees.Gender" class="form-control">
+                    @foreach (var gender in Enum.GetValues(typeof(Sex)))
+                    {
+                        <option value="@gender">@gender</option>
+                    }
+                </select>
+            </div>
+        </div>
             <MudItem xs="6" sm="3">
                 <MudDatePicker Label="Editable with Placeholder" Editable="true" @bind-Date="employees.HireDate" Placeholder="Select Date" Variant="Variant.Outlined"/>
             </MudItem>

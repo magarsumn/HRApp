@@ -24,6 +24,16 @@ namespace HRApp.Server.Controllers
             _designationRepository = designationRepository;
         }
 
+        [HttpGet("GenderData")]
+        public async Task<double[]> GetGenderDate()
+        {   
+            var male = await _employeeRepository.CountAsync(x=>x.Gender == Sex.Male);
+            var female = await _employeeRepository.CountAsync(x => x.Gender == Sex.Female);
+            var others = await _employeeRepository.CountAsync(x => x.Gender == Sex.Others);
+            double[] data = {male, female, others};
+            return data;
+        }
+
         [HttpGet("DepCount")]
         public async Task<int> DepartmetCount()
         {
@@ -40,5 +50,7 @@ namespace HRApp.Server.Controllers
         {
             return await _employeeRepository.CountAsync();
         }
+
+        
     }
 }

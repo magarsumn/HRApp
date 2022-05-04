@@ -4,96 +4,100 @@
 <MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
     <MudGrid>
         <MudItem xs="12" sm="6" md="4">
-            
-            
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-12 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Employees</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@employees.Count</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-12 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2 bg-danger ">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 text-xs font-weight-bold text-white text-uppercase mb-1 text-center">
+                                    Total Employees
                                 </div>
+                                <div class="h2 mb-0 font-weight-bold text-white-50 text-center">@employees.Count</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
-                       
+                    </div>
+                </div>
+            </div>
+
         </MudItem>
         <MudItem xs="12" sm="6" md="4">
-             <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-12 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Departments</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@departments.Count</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+            <!-- Total Departments Card Example -->
+            <div class="col-xl-12 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2 bg-success">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 text-xs font-weight-bold text-white text-uppercase mb-1 text-center">
+                                    Total Departments
                                 </div>
+                                <div class="h2 mb-0 font-weight-bold text-white-50 text-center">@departments.Count</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
         </MudItem>
         <MudItem xs="12" sm="12" md="4">
             <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-12 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Designations</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@designations.Count</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
+            <div class="col-xl-12 col-md-6 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2 bg-warning">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 text-xs font-weight-bold text-white text-uppercase mb-1 text-center">
+                                    Total Designations
                                 </div>
+                                <div class="h2 mb-0 font-weight-bold text-white-50 text-center">@designations.Count</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
         </MudItem>
         <MudItem xs="12" sm="6">
+            <h3>Gender Chart</h3>
             <MudGrid>
                 <MudItem xs="12">
                     <MudChart ChartType="ChartType.Donut" Width="300px" Height="300px" InputData="@data" InputLabels="@labels">
-	                    <CustomGraphics>
-		                    <text class="donut-inner-text" x="47%" y="35%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="2">Total</text>
-		                    <text class="donut-inner-text" x="47%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="5">@data.Sum().ToString()</text>
-	                    </CustomGraphics>
+                        <CustomGraphics>
+                            <text class="donut-inner-text" x="47%" y="35%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="2">Total</text>
+                            <text class="donut-inner-text" x="47%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="5">@data.Sum().ToString()</text>
+                        </CustomGraphics>
                     </MudChart>
-                </MudItem>
-                <MudItem xs="12">
-                    <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
                 </MudItem>
             </MudGrid>
         </MudItem>
         <MudItem xs="12" sm="6">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 100%"></MudPaper>
+            <h3>Calender</h3>
+            <MudHidden Breakpoint="@Breakpoint.Xs">
+                        <MudDatePicker PickerVariant="PickerVariant.Static" Orientation="Orientation.Landscape" Date="@(DateTime.Today)" />
+                    </MudHidden>
         </MudItem>
-        
-        <MudItem xs="12" sm="6" md="4">
+
+        @*<MudItem xs="12" sm="6" md="4">
             <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
         </MudItem>
         <MudItem xs="12" sm="12" md="4">
             <MudPaper Elevation="2" Class="pa-4" Style="height: 200px;"></MudPaper>
-        </MudItem>
+        </MudItem>*@
     </MudGrid>
 </MudContainer>
 @code {
-    public double[] data = { 25, 77, 28, 5 };
-    public string[] labels = { "Oil", "Coal", "Gas", "Biomass" };
+    public double[] data;
+    public string[] labels = { "Male", "Female", "Others"};
     private int Index = -1; //default value cannot be 0 -> first selectedindex is 0.
 
     List<Designation> designations = new();
@@ -104,10 +108,10 @@
         designations = await client.GetFromJsonAsync<List<Designation>>("api/designation");
         departments = await client.GetFromJsonAsync<List<Department>>("api/department");
         employees = await client.GetFromJsonAsync<List<Employees>>("api/employees");
+        data = await client.GetFromJsonAsync<double[]>("api/Dashboard/GenderData");
 
-        
     }
 
-    
-    
+
+
 }

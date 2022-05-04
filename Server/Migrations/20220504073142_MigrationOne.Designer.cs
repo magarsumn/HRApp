@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRApp.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220503122548_MigrationTwo")]
-    partial class MigrationTwo
+    [Migration("20220504073142_MigrationOne")]
+    partial class MigrationOne
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

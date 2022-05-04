@@ -68,6 +68,7 @@ namespace HRApp.Server.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var data = await _designationRepository.FirstOrDefaultAsync(id);
+
             if (data == null)
             {
                 return NotFound();
